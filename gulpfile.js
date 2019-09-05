@@ -4,11 +4,14 @@ var browserSync = require('browser-sync').create();
 var autoprefixer = require('gulp-autoprefixer');
 var wait = require('gulp-wait');
 
+
 gulp.task('sass', function() {
     return gulp.src('./sass/*.scss')
+        .pipe(wait(500))
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('./css'))
         .pipe(browserSync.stream());
+        
 });
 
 gulp.task('serve', ['sass'], function() {

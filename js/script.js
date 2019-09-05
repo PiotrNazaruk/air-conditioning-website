@@ -48,18 +48,19 @@ window.addEventListener('scroll',()=>{
 let windowWidth = window.innerWidth;
 if(windowWidth > 600){
     TweenMax.staggerFrom('.navigation-animation',.2,{
-        y:10,
+        y:-10,
         opacity:0,
-        delay: 1
+        delay: .5,
+        ease: Power4.easeIn
 
     },0.3)
 }
 TweenMax.from('.h1',2,{
-    x:20,
+    x:10,
     opacity: 0
 })
 TweenMax.from('.button-animated',2,{
-    y:10,
+    y:20,
     opacity: 0,
     delay:1
 })
@@ -102,7 +103,7 @@ $('a[href*="#"]')
 
 
 
-
+let dd = document.addEventListener()
 
 // api google map function
  

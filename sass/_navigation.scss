@@ -7,11 +7,12 @@
 
     z-index: -100;
     width: 100%;
-    background: whitesmoke;
+    background: white;
     opacity:0;
     transition: 1s all ease;
+    overflow: hidden;
         @include desktop{
-            height: 20vh;
+            height: 30vh;
             transform: translateY(0%);
             position: initial;
             opacity: 1;
@@ -30,30 +31,40 @@
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    background: whitesmoke;
     position: relative;
     @include phone-landscape{
         height: 50%;
     }
         @include desktop{
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
-            width: 70%;
+            width: 95%;
             justify-content: space-between;
             height: 100%;
-            background: whitesmoke;
             height: 100%;
         }
 
 }
-.navigation__telephone{
+.navigation__top-elements{
     display: none;
+   
     @include desktop{
-        position: absolute;
-        display: block;
-        top: 10%;
-        left:0 ;
-       
+        
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10%;
+            height: .1rem;
+            width: 100%;
+            background: $lightblue;
+        }
        
     }
 
@@ -63,27 +74,7 @@ a[href^="tel:"] {
     font-style: initial;
 }
 
-.navigation-media{
-    position: absolute;
-    height:2rem;
-    width: 6rem;
-    display: flex;
-    top: 10%;
-    right: 0;
-    display: flex;
-    justify-content: space-between;
-    z-index: 100;
-   
-   a{
-       height: 75%;
-        width: 40%;
-        &:hover{
-            opacity: 0.5 !important;
-        }
-       
-   }
-    
-}
+
 .navigation-media__item{
     height: 100%;
     
@@ -103,15 +94,16 @@ a[href^="tel:"] {
             width: 40%;
             justify-content: space-between;
             align-items: center;
-            height: 100%;
-            padding-top: 2rem;
+            height: 50%;
+
+            align-self: flex-start;
         }
     li{
         padding-top: 3rem;
         font-size: 1.6rem;
         color: $shadeno1;
         &:hover{
-            opacity: .5;
+            color: $lightblue;
         }
         @include phone-landscape{
             font-size: 1.3rem;
@@ -127,18 +119,60 @@ a[href^="tel:"] {
 }
 .navigation__logo{
     max-width: 60%;
-    height: 60%;
+    height: 80%;
     display: none;
+    a{
+        height: 100%;
+    }
+    img{
+        height: 100%;
+        width: 40%;
+    }
     @include desktop{
         height: 100%;
         display: flex;
-        width: 30%;
-        padding-top: 2rem;
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
        
     }
     
     
         
+}
+
+.navigation__telephone{
+    width: 50%;
+    height: 60%;
+    display: flex;
+    .navigation__telephone-icon{
+        height: 70%;
+        width: 30%;
+    }
+    .navigation__telephone-info{
+        height: 100%;
+        width: 70%;
+        h3{
+            font-size: 1rem;
+        }
+    }
+}
+.navigation__hours{
+    width: 50%;
+    height: 60%;
+    display: flex;
+    .navigation__hours-icon{
+        height: 70%;
+        width: 30%;
+    }
+    .navigation__hours-info{
+        height: 100%;
+        width: 70%;
+        h3{
+            font-size: 1rem;
+        }
+    }
 }
 .home-link{
     display: flex;
@@ -163,7 +197,7 @@ a[href^="tel:"] {
             display: none;
         }
     &__item{
-        background: whitesmoke;
+        background: black;
         width: 100%;
         height: .2rem; 
     }
@@ -196,19 +230,27 @@ a[href^="tel:"] {
 
 @keyframes show{
     0%{
-        transform: translateX(-10%);
+        transform: rotate(0deg);
         opacity:0;
        
     }
     50%{
-        transform: translateX(-50%);
+        transform: rotate(45deg);
         opacity: 0.5;
         
     }
     100%{
-        transform: translateX(-100%);
+        transform: rotete(45deg);
         opacity: 1;
         
     }
+
+}
+.navigation__info{
+    width: 60%;
+    align-self: flex-end;
+    height: 100%;
+    display: flex;
+    align-items: center;
 
 }

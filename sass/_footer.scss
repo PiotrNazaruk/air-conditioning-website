@@ -1,33 +1,44 @@
 .footer{
-    height: 40vh;
+    height: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: $dark;
+    background: rgb(57, 57, 71);
+    overflow: hidden;
+    @include small-phone{
+        height: 22vh;
+    }
+    @include desktop{
+        height: 25vh; 
+    }
+    @include desktop-1440{
+        height: 18vh;
+    }
     @include phone-landscape{
-        height: 60vh;
+        height: 30vh;
     }
   
     &__container{
         height: 95%;
         width: 95%;
         display: flex;
-        justify-content: center;
-        align-items: center;
+      
         position: relative;
         @include desktop{
             width: 60%;
+            
 
         }
         
     }
 }
 .footer__logo{
-  width: 30%;
-  height: 100%;
+  width: 10%;
+  height: 70%;
   @include desktop{
-      height: 20%;
+      height: 60%;
       position: absolute;
+      width: 8%;
       left: 0;
       top: 10%;
   }
@@ -41,61 +52,73 @@
   }
 }
 .footer__links{
-    width: 40%;
-    height:60%;
-    @include small-phone{
-        width: 35%;
-    }
-   
-    ul{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 60%;
-        align-items: flex-start;
-        padding-left: 1rem;
-        @include desktop{
-            align-items: flex-end;
-        }
-        li{
-            color: white;
-            &:hover{
-                opacity: .5;
-            }
-            @include desktop{
-                padding-right: 4rem;
-            }
-           
-            
-        }
-    }
+   position: absolute;
+   width: 40%;
+   height: 15%;
+   right: 0;
+   top: 10%;
+   @include small-phone{
+       width: 50%;
+   }
+   ul{
+       display: flex;
+       justify-content: space-between;
+       li{
+           color: whitesmoke;
+           @include desktop{
+               font-size: 1.6rem;
+           }
+       }
+   }
 }
 .footer__icons{
-    width: 30%;
-    height: 60%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    a{
-        height: 50%;
-        
-    }
+position: absolute;
+top: 40%;
+right: 0;
+height: 3rem;
+width: 3rem;
+z-index: 150;
+}
+.footer-link{
+    position: relative;
+    &:after{
 
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: .1rem;
+        background: whitesmoke;
+        right: -10%;
+        top: 0;
+        @include small-phone{
+            right: -20%;
+        }
+        @include phone-landscape{
+            right: -30%;
+        }
+        @include desktop{
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: .1rem;
+            background: whitesmoke;
+            right: -30%;
+            top: 0;
+        }
+        @include desktop-1440{
+            right: -70%;
+        }
+    }
 }
-.footer__icon{
-    height: 50%;
-    width: 80%;
-    
-}
+
+
 .footer__all-rights{
     position: absolute;
     left: 0%;
     bottom: 50%;
     width: 30%;
-    @include desktop{
-        bottom: 10%;
-
-    }
+    bottom: 5%;
+    
     span{
         color: white;
        
@@ -106,8 +129,16 @@
     position: absolute;
     right: 0;
     bottom: 2%;
+    width: 45%;
+    text-align: right;
+    @include desktop{
+        position: absolute;
+    right: 0;
+    bottom: 2%;
+    }
     span{
         color: white;
+        
        
     }
 }

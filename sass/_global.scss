@@ -33,7 +33,8 @@ a{
     color: $dark !important;
 }
 h1{
-    font-family: 'Cantata One', serif;
+    font-family: 'Archivo Black', sans-serif;
+    color: rgba(0, 0, 0, 0.76);
 }
 svg{
     max-width: 100%;
@@ -46,8 +47,9 @@ li{
 }
 h2{
 
-    letter-spacing: 1rem;
-    font-family: 'Cantata One', serif;
+    letter-spacing: .6rem;
+    font-family: 'Archivo Black', sans-serif;
+    
    
 }
 h3{
